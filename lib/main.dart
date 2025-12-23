@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'main_page.dart';
 import 'pages/notification_page.dart';
+import 'pages/edit_profile_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
       home: const MainPage(),
       routes: {
         '/notifications': (context) => const NotificationPage(),
+        '/edit-profile': (context) => const EditProfilePage(),
       },
     );
   }

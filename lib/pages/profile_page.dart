@@ -142,8 +142,8 @@ class ProfilePage extends StatelessWidget {
               title: const Text('Edit Profile'),
               trailing: const Icon(Icons.arrow_forward_ios, size: 16),
               onTap: () {
-                // Handle edit profile action
-                _showEditProfileDialog(context);
+                // Navigate to edit profile page
+                Navigator.pushNamed(context, '/edit-profile');
               },
             ),
             const Divider(),
@@ -201,26 +201,6 @@ class ProfilePage extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-
-  void _showEditProfileDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: const Text('Edit Profile'),
-          content: const Text('Fitur edit profile akan segera tersedia.'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text('OK'),
-            ),
-          ],
-        );
-      },
     );
   }
 
