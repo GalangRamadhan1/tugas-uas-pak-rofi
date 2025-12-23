@@ -23,6 +23,7 @@ class ClassPage extends StatelessWidget {
               
               // Class 1: Desain Antarmuka & Pengalaman Pengguna
               _buildClassCard(
+                context,
                 'Desain Antarmuka & Pengalaman Pengguna',
                 'IF4021',
                 'Dr. Siti Rahayu',
@@ -35,6 +36,7 @@ class ClassPage extends StatelessWidget {
               
               // Class 2: Sistem Operasi
               _buildClassCard(
+                context,
                 'Sistem Operasi',
                 'IF3015',
                 'Prof. Budi Santoso',
@@ -47,6 +49,7 @@ class ClassPage extends StatelessWidget {
               
               // Class 3: Pemrograman Multimedia Interaktif
               _buildClassCard(
+                context,
                 'Pemrograman Multimedia Interaktif',
                 'IF4030',
                 'Dr. Ahmad Fauzi',
@@ -62,6 +65,7 @@ class ClassPage extends StatelessWidget {
   }
 
   Widget _buildClassCard(
+    BuildContext context,
     String courseName,
     String classCode,
     String lecturerName,
@@ -76,52 +80,59 @@ class ClassPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                Container(
-                  width: 60,
-                  height: 60,
-                  decoration: BoxDecoration(
-                    color: _getColorForCourse(courseName),
-                    borderRadius: BorderRadius.circular(8),
+            GestureDetector(
+              onTap: () {
+                // Navigate to detail class page
+                Navigator.pushNamed(context, '/detail-class');
+              },
+              child: Row(
+                children: [
+                  Container(
+                    width: 60,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      color: _getColorForCourse(courseName),
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Icon(
+                      _getIconForCourse(courseName),
+                      color: _getTextColorForCourse(courseName),
+                      size: 30,
+                    ),
                   ),
-                  child: Icon(
-                    _getIconForCourse(courseName),
-                    color: _getTextColorForCourse(courseName),
-                    size: 30,
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          courseName,
+                          style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          'Kode: $classCode',
+                          style: TextStyle(
+                            color: Colors.grey[600],
+                            fontSize: 14,
+                          ),
+                        ),
+                        Text(
+                          'Dosen: $lecturerName',
+                          style: TextStyle(
+                            color: Colors.grey[600],
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                const SizedBox(width: 16),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        courseName,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-                      Text(
-                        'Kode: $classCode',
-                        style: TextStyle(
-                          color: Colors.grey[600],
-                          fontSize: 14,
-                        ),
-                      ),
-                      Text(
-                        'Dosen: $lecturerName',
-                        style: TextStyle(
-                          color: Colors.grey[600],
-                          fontSize: 14,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+                  const Icon(Icons.arrow_forward_ios, size: 16),
+                ],
+              ),
             ),
             const SizedBox(height: 16),
             Row(
