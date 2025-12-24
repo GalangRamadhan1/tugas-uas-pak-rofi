@@ -3,6 +3,7 @@ import 'main_page.dart';
 import 'pages/notification_page.dart';
 import 'pages/edit_profile_page.dart';
 import 'pages/detail_class_page.dart';
+import 'pages/announcement_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'LMS App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -43,6 +45,7 @@ class MyApp extends StatelessWidget {
           classCode: 'IF4021',
           lecturerName: 'Dr. Siti Rahayu',
         ),
+        '/announcements': (context) => const AnnouncementPage(),
       },
     );
   }
