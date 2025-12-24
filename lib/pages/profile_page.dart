@@ -28,7 +28,7 @@ class ProfilePage extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     const Text(
-                      'Dandy Candra Pratama',
+                      'Galang Ramadhan',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -48,9 +48,9 @@ class ProfilePage extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               
-              _buildInfoCard('Nama Lengkap', 'Dandy Candra Pratama'),
+              _buildInfoCard('Nama Lengkap', 'Galang Ramadhan'),
               const SizedBox(height: 12),
-              _buildInfoCard('Email Institusi', 'dandy.candra@university.edu'),
+              _buildInfoCard('Email Institusi', 'galang.ramadhan@university.edu'),
               const SizedBox(height: 12),
               _buildInfoCard('Program Studi', 'Teknik Informatika'),
               const SizedBox(height: 12),

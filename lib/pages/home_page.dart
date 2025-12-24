@@ -30,7 +30,7 @@ class HomePage extends StatelessWidget {
               Container(
                 margin: const EdgeInsets.only(bottom: 24),
                 child: const Text(
-                  'Hallo, Dandy Candra Pratama',
+                  'Hallo, Galang Ramadhan',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,

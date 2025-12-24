@@ -8,9 +8,9 @@ class EditProfilePage extends StatefulWidget {
 }
 
 class _EditProfilePageState extends State<EditProfilePage> {
-  final TextEditingController _firstNameController = TextEditingController(text: 'Dandy');
-  final TextEditingController _lastNameController = TextEditingController(text: 'Candra Pratama');
-  final TextEditingController _emailController = TextEditingController(text: 'dandy.candra@university.edu');
+  final TextEditingController _firstNameController = TextEditingController(text: 'Galang');
+  final TextEditingController _lastNameController = TextEditingController(text: 'Ramadhan');
+  final TextEditingController _emailController = TextEditingController(text: 'galang.ramadhan@university.edu');
   final TextEditingController _countryController = TextEditingController(text: 'Indonesia');
   final TextEditingController _descriptionController = TextEditingController(text: 'Mahasiswa Teknik Informatika yang antusias belajar pengembangan aplikasi mobile.');
 
