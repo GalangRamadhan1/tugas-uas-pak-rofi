@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../pages/detail_class_page.dart';
 
 class ClassPage extends StatelessWidget {
   const ClassPage({super.key});
@@ -82,8 +83,20 @@ class ClassPage extends StatelessWidget {
           children: [
             GestureDetector(
               onTap: () {
-                // Navigate to detail class page
-                Navigator.pushNamed(context, '/detail-class');
+                // Navigate to detail class page with specific class data
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailClassPage(
+                      className: courseName,
+                      classCode: classCode,
+                      lecturerName: lecturerName,
+                      semester: semester,
+                      startDate: startDate,
+                      progress: progress,
+                    ),
+                  ),
+                );
               },
               child: Row(
                 children: [

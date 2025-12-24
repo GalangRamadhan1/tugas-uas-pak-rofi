@@ -4,12 +4,18 @@ class DetailClassPage extends StatelessWidget {
   final String className;
   final String classCode;
   final String lecturerName;
+  final String semester;
+  final String startDate;
+  final double progress;
   
   const DetailClassPage({
     super.key,
     required this.className,
     required this.classCode,
     required this.lecturerName,
+    required this.semester,
+    required this.startDate,
+    required this.progress,
   });
 
   @override
@@ -55,6 +61,51 @@ class DetailClassPage extends StatelessWidget {
                         style: TextStyle(
                           color: Colors.grey[600],
                           fontSize: 14,
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        'Semester: $semester',
+                        style: TextStyle(
+                          color: Colors.grey[600],
+                          fontSize: 14,
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        'Tanggal Mulai: $startDate',
+                        style: TextStyle(
+                          color: Colors.grey[600],
+                          fontSize: 14,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text(
+                              'Progress Penyelesaian',
+                              style: TextStyle(
+                                color: Colors.grey[600],
+                                fontSize: 12,
+                              ),
+                            ),
+                          ),
+                          Text(
+                            '${(progress * 100).toInt()}%',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                              color: _getProgressColor(progress),
+                            ),
+                          ),
+                        ],
+                      ),
+                      LinearProgressIndicator(
+                        value: progress,
+                        backgroundColor: Colors.grey[300],
+                        valueColor: AlwaysStoppedAnimation<Color>(
+                          _getProgressColor(progress),
                         ),
                       ),
                     ],
@@ -238,13 +289,13 @@ class DetailClassPage extends StatelessWidget {
                     color: Colors.blue[50],
                     borderRadius: BorderRadius.circular(4),
                   ),
-                  child: const Row(
+                  child: Row(
                     children: [
-                      Icon(Icons.insert_drive_file, size: 16, color: Colors.blue),
-                      SizedBox(width: 8),
+                      const Icon(Icons.insert_drive_file, size: 16, color: Colors.blue),
+                      const SizedBox(width: 8),
                       Expanded(
                         child: Text(
-                          'Materi_Pertemuan.pdf',
+                          'Materi_Pertemuan_$meetingNumber.pdf',
                           style: TextStyle(
                             fontSize: 12,
                             color: Colors.blue,
@@ -509,5 +560,15 @@ class DetailClassPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Color _getProgressColor(double progress) {
+    if (progress >= 0.8) {
+      return Colors.green;
+    } else if (progress >= 0.5) {
+      return Colors.orange;
+    } else {
+      return Colors.red;
+    }
   }
 }
