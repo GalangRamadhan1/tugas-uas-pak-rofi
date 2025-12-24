@@ -7,6 +7,7 @@ import 'pages/announcement_page.dart';
 import 'pages/assignment_page.dart';
 import 'pages/quiz_page.dart';
 import 'pages/quiz_taking_page.dart';
+import 'pages/login_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,8 +40,9 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MainPage(),
+      home: const LoginPage(),
       routes: {
+        '/main': (context) => const MainPage(),
         '/notifications': (context) => const NotificationPage(),
         '/edit-profile': (context) => const EditProfilePage(),
         '/detail-class': (context) => const DetailClassPage(
