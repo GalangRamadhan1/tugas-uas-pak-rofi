@@ -174,7 +174,7 @@ class DetailClassPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              _buildQuizCard(),
+              _buildQuizCard(context),
               const SizedBox(height: 16),
               
               // Link Zoom
@@ -411,7 +411,7 @@ class DetailClassPage extends StatelessWidget {
     );
   }
 
-  Widget _buildQuizCard() {
+  Widget _buildQuizCard(BuildContext context) {
     return Card(
       elevation: 2,
       child: Padding(
@@ -450,6 +450,10 @@ class DetailClassPage extends StatelessWidget {
                   ),
                 ),
               ),
+              onTap: () {
+                // Navigate to quiz page
+                Navigator.pushNamed(context, '/quiz');
+              },
             ),
           ],
         ),

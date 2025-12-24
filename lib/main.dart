@@ -5,6 +5,8 @@ import 'pages/edit_profile_page.dart';
 import 'pages/detail_class_page.dart';
 import 'pages/announcement_page.dart';
 import 'pages/assignment_page.dart';
+import 'pages/quiz_page.dart';
+import 'pages/quiz_taking_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -59,6 +61,14 @@ class MyApp extends StatelessWidget {
           fileSize: '2.4 MB',
           fileStatus: 'Terkirim',
         ),
+        '/quiz': (context) => const QuizPage(
+          quizTitle: 'Kuis 1: State Management',
+          description: 'Kuis ini akan menguji pemahaman Anda tentang konsep state management dalam Flutter. Kuis terdiri dari 10 soal pilihan ganda dengan durasi 30 menit.',
+          duration: '30 menit',
+          deadline: '15 Januari 2026',
+          gradingMethod: 'Nilai Tertinggi',
+        ),
+        '/quiz-taking': (context) => const QuizTakingPage(),
       },
     );
   }

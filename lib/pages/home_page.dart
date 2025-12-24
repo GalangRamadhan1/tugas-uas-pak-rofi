@@ -361,7 +361,7 @@ class HomePage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: const Icon(
-                  Icons.assignment,
+                  Icons.quiz,
                   color: Colors.orange,
                 ),
               ),
@@ -385,8 +385,8 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               onTap: () {
-                // Navigate to assignment page
-                Navigator.pushNamed(context, '/assignment');
+                // Navigate to quiz page
+                Navigator.pushNamed(context, '/quiz');
               },
             ),
           ],
