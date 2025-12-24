@@ -162,7 +162,7 @@ class DetailClassPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              _buildAssignmentCard(),
+              _buildAssignmentCard(context),
               const SizedBox(height: 16),
               
               // Kuis
@@ -323,7 +323,7 @@ class DetailClassPage extends StatelessWidget {
     );
   }
 
-  Widget _buildAssignmentCard() {
+  Widget _buildAssignmentCard(BuildContext context) {
     return Card(
       elevation: 2,
       child: Padding(
@@ -362,6 +362,10 @@ class DetailClassPage extends StatelessWidget {
                   ),
                 ),
               ),
+              onTap: () {
+                // Navigate to assignment page
+                Navigator.pushNamed(context, '/assignment');
+              },
             ),
             const Divider(),
             ListTile(
@@ -396,6 +400,10 @@ class DetailClassPage extends StatelessWidget {
                   ),
                 ),
               ),
+              onTap: () {
+                // Navigate to assignment page
+                Navigator.pushNamed(context, '/assignment');
+              },
             ),
           ],
         ),

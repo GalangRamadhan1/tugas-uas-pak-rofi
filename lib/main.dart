@@ -4,6 +4,7 @@ import 'pages/notification_page.dart';
 import 'pages/edit_profile_page.dart';
 import 'pages/detail_class_page.dart';
 import 'pages/announcement_page.dart';
+import 'pages/assignment_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,6 +50,15 @@ class MyApp extends StatelessWidget {
           progress: 0.85,
         ),
         '/announcements': (context) => const AnnouncementPage(),
+        '/assignment': (context) => const AssignmentPage(
+          assignmentTitle: 'Tugas Besar Flutter',
+          assignmentDescription: 'Buat aplikasi Flutter sederhana yang mengimplementasikan konsep-konsep dasar state management, navigasi antar halaman, dan penggunaan widget dasar. Aplikasi harus memiliki minimal 3 halaman dengan navigasi yang baik dan tata letak yang rapi.',
+          deadline: '30 Januari 2026',
+          isSubmitted: false,
+          fileName: 'tugas_besar_flutter.pdf',
+          fileSize: '2.4 MB',
+          fileStatus: 'Terkirim',
+        ),
       },
     );
   }
